@@ -94,7 +94,7 @@ body, html {
 }
 
 .login-form input:invalid {
-  border-color: #ff4d4f;
+  border-color: #ffffff;
 }
 
 .error-message {
