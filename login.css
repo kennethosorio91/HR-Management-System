@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Left Side */
+.left-side {
+  flex: 1;
+  background: url('https://thekoreaninme.com/wp-content/uploads/2020/09/korean-streetwear.jpg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+  text-align: center;
+}
+
+.seven {
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+/* Right Side */
+.right-side {
+  flex: 1;
+  background-color: #474c56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-form-title .subheader {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.login-form-title .header {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.login-form-title .version {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 0.75rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.login-form input:invalid {
+  border-color: #ff4d4f;
+}
+
+.error-message {
+  display: none;
+  color: #ff4d4f;
+  font-size: 0.875rem;
+  margin-top: -8px;
+}
+
+.login-form button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background: #1c1e22;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-form button:hover {
+  background: #0f1012;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    height: 40vh;
+    background-position: center;
+  }
+
+  .logo {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .right-side {
+    height: auto;
+    min-height: 60vh;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .login-box {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}

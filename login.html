@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban 7 Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="left-side">
+      <div class="logo">
+        <span>URBAN <span class="seven">7</span></span><br />
+        <span>URBAN <span class="seven">7</span></span><br />
+        <span>URBAN <span class="seven">7</span></span>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="login-box">
+        <div class="login-form-title">
+          <div class="subheader">Powered by</div>
+          <div class="header">CoreHR</div>
+          <div class="version">v 1.0.0</div>
+        </div>
+        <form id="loginForm" class="login-form" onsubmit="return validateLogin(event)">
+          <input type="text" id="username" placeholder="Enter CoreID" required />
+          <input type="password" id="password" placeholder="Enter Password" required />
+          <div class="error-message" id="errorMessage"></div>
+          <button type="submit">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function validateLogin(event) {
+      event.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Default credentials
+      const defaultUsername = 'admin';
+      const defaultPassword = 'admin123';
+      
+      if (username === defaultUsername && password === defaultPassword) {
+        // Store login state
+        sessionStorage.setItem('isLoggedIn', 'true');
+        // Redirect to dashboard
+        window.location.href = 'dashboard.html';
+      } else {
+        errorMessage.textContent = 'Invalid username or password';
+        errorMessage.style.display = 'block';
+      }
+      
+      return false;
+    }
+
+    // Check if user is already logged in
+    window.onload = function() {
+      if (sessionStorage.getItem('isLoggedIn') === 'true') {
+        window.location.href = 'dashboard.html';
+      }
+    }
+  </script>
+</body>
+</html>

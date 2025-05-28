@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreHR Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        // Check if user is logged in
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Handle logout
+        function handleLogout() {
+            sessionStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">CoreHR</div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <img src="https://i.postimg.cc/Gt59nCTG/home-1.png" alt="Dashboard" width="24" height="24">
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="https://i.postimg.cc/yYDkXk2P/users.png" alt="Employees" width="24" height="24">
+                    <span>Employees</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="https://i.postimg.cc/sDb1n3rR/coins.png" alt="Payroll" width="24" height="24">
+                    <span>History</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Dashboard</h1>
+                <div class="user-actions">
+                    <a href="#" onclick="handleLogout()" class="logout-btn" title="Logout" aria-label="Logout">
+                        <img src="https://i.postimg.cc/BZYjKx7b/log-out.png" alt="Logout" width="24" height="24">
+                    </a>
+                </div>
+            </header>
+
+            <div class="dashboard-stats">
+                <!-- Total Employees Card -->
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="https://i.postimg.cc/yYDkXk2P/users.png" alt="Employees" width="24" height="24">
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Employees</h3>
+                        <div class="stat-value">0</div>
+                        <div class="stat-description">All registered staff</div>
+                    </div>
+                </div>
+
+                <!-- Monthly Payroll Card -->
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="https://i.postimg.cc/sDb1n3rR/coins.png" alt="Payroll" width="24" height="24">
+                    </div>
+                    <div class="stat-info">
+                        <h3>Monthly Payroll</h3>
+                        <div class="stat-value">$0</div>
+                        <div class="stat-description">Total monthly expenses</div>
+                    </div>
+                </div>
+
+                <!-- Active Rate Card -->
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="https://i.postimg.cc/6Qf35RG9/check-circle.png" alt="Check" width="24" height="24">
+                    </div>
+                    <div class="stat-info">
+                        <h3>Active Rate</h3>
+                        <div class="stat-value">0.0%</div>
+                        <div class="stat-description">Currently active employees</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional content sections can be added here -->
+            <div class="dashboard-charts">
+                <!-- Placeholder for future charts/graphs -->
+            </div>
+        </main>
+    </div>
+</body>
+</html> 
