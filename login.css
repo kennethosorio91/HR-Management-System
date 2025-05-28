@@ -18,29 +18,64 @@ body, html {
 /* Left Side */
 .left-side {
   flex: 1;
-  background: url('https://thekoreaninme.com/wp-content/uploads/2020/09/korean-streetwear.jpg') center center / cover no-repeat;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  background-color: #474c56; /* Base color */
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.bg-slide.hidden {
+  opacity: 0;
+}
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #474c56;
+  z-index: 1; /* Sits above background images */
+  opacity: 40%;
 }
 
 .logo {
   color: white;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
-  line-height: 4rem;
+  line-height: 4.5rem;
   text-align: center;
+  position: relative;
+  z-index: 3;
 }
 
 .seven {
   margin-left: 10px;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 /* Right Side */
 .right-side {
-  flex: 1;
+  flex: 0.5;
   background-color: #474c56;
   display: flex;
   align-items: center;
@@ -133,6 +168,11 @@ body, html {
   .logo {
     font-size: 2rem;
     line-height: 2.5rem;
+  }
+
+  .seven{
+    font-size: 1.5rem;
+    line-height: 2.5rem
   }
 
   .right-side {
