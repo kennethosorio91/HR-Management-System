@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Database</title>
+    <link rel="stylesheet" href="employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        // Check if user is logged in
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Handle logout
+        function handleLogout() {
+            sessionStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">CoreHR</div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <img src="https://i.postimg.cc/Gt59nCTG/home-1.png" alt="Dashboard" width="24" height="24">
+                    <span>Dashboard</span>
+                </a>
+                <a href="employee.html" class="nav-item active">
+                    <img src="https://i.postimg.cc/yYDkXk2P/users.png" alt="Employees" width="24" height="24">
+                    <span>Employees</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="https://i.postimg.cc/sDb1n3rR/coins.png" alt="Payroll" width="24" height="24">
+                    <span>History</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Employee Database</h1>
+                <div class="user-actions">
+                    <a href="#" onclick="handleLogout()" class="logout-btn" title="Logout" aria-label="Logout">
+                        <img src="https://i.postimg.cc/BZYjKx7b/log-out.png" alt="Logout" width="24" height="24">
+                    </a>
+                </div>
+            </header>
+
+
+        </main>
+    </div>
+</body>
+</html> 
