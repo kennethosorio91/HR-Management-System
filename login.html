@@ -10,10 +10,13 @@
 <body>
   <div class="container">
     <div class="left-side">
+      <div class="overlay"></div>
+      <div class="bg-slide" id="bg1"></div>
+      <div class="bg-slide" id="bg2"></div>
       <div class="logo">
-        <span>URBAN <span class="seven">7</span></span><br />
-        <span>URBAN <span class="seven">7</span></span><br />
-        <span>URBAN <span class="seven">7</span></span>
+        <span>URBAN<span class="seven">7</span></span><br />
+        <span>URBAN<span class="seven">7</span></span><br />
+        <span>URBAN<span class="seven">7</span></span>
       </div>
     </div>
     <div class="right-side">
@@ -63,6 +66,44 @@
       if (sessionStorage.getItem('isLoggedIn') === 'true') {
         window.location.href = 'dashboard.html';
       }
+
+      const images = [
+        'https://thekoreaninme.com/wp-content/uploads/2020/09/korean-streetwear.jpg',
+        'https://s1.aptocdn.com/www.fashionchingu.com/wp-content/uploads/2022/01/alex-finch-seoul-fashion-week.jpg',
+        'https://s1.aptocdn.com/www.fashionchingu.com/wp-content/uploads/2022/01/alex-finch-seoul-fashion-week-2.jpg',
+        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdFjfaLY8kTYg46yc91O9FIbWjaOufZ7MWhzz9YXzr0cW9zfcL_LJid2KEv15hKlHhb7kjMTBvt0qVR5C02DR53t1syns4qnj02-v3v059M7QHX7-YZTa_GRf23SOkuKAKnNSZwYISwzbt/s1600/korean+fashion+header.jpg'
+      ]; 
+      
+      let current = 0;
+      const bg1 = document.getElementById('bg1');
+      const bg2 = document.getElementById('bg2');
+      let showing = bg1;
+      let hidden = bg2;
+
+      // Initial setup
+      bg1.style.backgroundImage = `url('${images[0]}')`;
+      bg1.style.opacity = 1;
+      bg2.style.opacity = 0;
+
+      function fadeToNextImage() {
+        current = (current + 1) % images.length;
+        // Set next image to hidden div
+        hidden.style.backgroundImage = `url('${images[current]}')`;
+
+        // Fade out the visible div & fade in the hidden div simultaneously
+        showing.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+        hidden.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+
+        showing.style.opacity = 0;
+        hidden.style.opacity = 1;
+
+        // Swap references after transition duration
+        setTimeout(() => {
+          [showing, hidden] = [hidden, showing];
+        }, 700);
+      }
+
+      setInterval(fadeToNextImage, 5000);
     }
   </script>
 </body>
