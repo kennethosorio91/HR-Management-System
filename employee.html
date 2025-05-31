@@ -8,19 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script>
-        // Check if user is logged in
-        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
-            window.location.href = 'login.html';
-        }
-
-        // Handle logout Session
-        function handleLogout() {
-            sessionStorage.removeItem('isLoggedIn');
-            window.location.href = 'login.html';
-        }
-    </script>
-
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -52,8 +39,67 @@
                 </div>
             </header>
 
+            <!-- Action Bar -->
+            <div class="action-bar">
+                <button class="add-btn" onclick="showAddEmployeeForm()">+ Add</button>
+            </div>
 
+            <!-- Employee Table -->
+            <div class="table-container">
+                <table class="employee-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>Salary</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table content will be loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add Employee Overlay -->
+            <div id="addEmployeeOverlay" class="overlay">
+                <div class="add-employee-form">
+                    <div class="form-header">
+                        <h2>Add Employee</h2>
+                        <button class="close-btn" onclick="hideAddEmployeeForm()">×</button>
+                    </div>
+                    <form id="addEmployeeForm" onsubmit="handleAddEmployee(event)">
+                        <div class="form-group">
+                            <label for="employeeName">Employee Name</label>
+                            <input type="text" id="employeeName" placeholder="Enter employee name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <input type="text" id="position" placeholder="Enter position" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department" class="department-select" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">Monthly Salary</label>
+                            <input type="number" id="salary" placeholder="Enter salary" required>
+                        </div>
+                        <button type="submit" class="add-employee-btn">Add Employee</button>
+                    </form>
+                </div>
+            </div>
         </main>
     </div>
+
+    <script src="employee.js"></script>
+    
 </body>
 </html> 
