@@ -11,13 +11,13 @@
     <script>
         // Check if user is logged in
         if (sessionStorage.getItem('isLoggedIn') !== 'true') {
-            window.location.href = 'login.html';
+            window.location.href = '../Login/login.html';
         }
 
         // Handle logout
         function handleLogout() {
             sessionStorage.removeItem('isLoggedIn');
-            window.location.href = 'login.html';
+            window.location.href = '../Login/login.html';
         }
     </script>
 
@@ -30,11 +30,11 @@
                     <img src="https://i.postimg.cc/Gt59nCTG/home-1.png" alt="Dashboard" width="24" height="24">
                     <span>Dashboard</span>
                 </a>
-                <a href="employee.html" class="nav-item">
+                <a href="../Employee/employee.html" class="nav-item">
                     <img src="https://i.postimg.cc/yYDkXk2P/users.png" alt="Employees" width="24" height="24">
                     <span>Employees</span>
                 </a>
-                <a href="payroll.html" class="nav-item">
+                <a href="../Payroll/payroll.html" class="nav-item">
                     <img src="https://i.postimg.cc/sDb1n3rR/coins.png" alt="Payroll" width="24" height="24">
                     <span>Payroll</span>
                 </a>
@@ -97,7 +97,7 @@
         </main>
     </div>
 
-    <script src="employee.js"></script>
+    <script src="../Employee/employee.js"></script>
     <script src="dashboard.js"></script>
 </body>
 </html> 

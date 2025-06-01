@@ -58,7 +58,7 @@
         // Store login state
         sessionStorage.setItem('isLoggedIn', 'true');
         // Redirect to dashboard
-        window.location.href = 'dashboard.html';
+        window.location.href = '../Dashboard/dashboard.html';
       } else {
         errorMessage.textContent = 'Invalid username or password';
         errorMessage.style.display = 'block';
@@ -70,7 +70,7 @@
     // Check if user is already logged in
     window.onload = function() {
       if (sessionStorage.getItem('isLoggedIn') === 'true') {
-        window.location.href = 'dashboard.html';
+        window.location.href = '../Dashboard/dashboard.html';
       }
 
       const images = [
