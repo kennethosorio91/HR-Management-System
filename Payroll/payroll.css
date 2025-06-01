@@ -99,6 +99,27 @@ body {
     background-color: #eee;
 }
 
+/* Payroll boxes */
+
+.boxes{
+    display: flex;
+    flex-direction: column;
+}
+
+.left-box{
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.right-box{
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
 /* Responsive Design Pages */
 @media (max-width: 768px) {
     .container {
