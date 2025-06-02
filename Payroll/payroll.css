@@ -1,182 +1,258 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
 }
 
 .container {
-    display: flex;
-    min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
 }
 
 /* Sidebar Styles */
 .sidebar {
-    width: 250px;
-    background-color: #fff;
-    padding: 20px;
-    border-right: 1px solid #eee;
-    transition: all 0.3s ease;
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 40px;
-    color: #333;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #2c3e50;
 }
 
 .nav-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-    text-decoration: none;
-    color: #666;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  text-decoration: none;
+  color: #555;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .nav-item:hover {
-    background-color: #f5f5f5;
-    color: #333;
+  background-color: #f0f0f0;
+  color: #000;
 }
 
 .nav-item.active {
-    background-color: #f0f0f0;
-    color: #333;
-    font-weight: 500;
+  background-color: #e9ecef;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 .nav-item img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Main Content Styles */
 .main-content {
-    flex: 1;
-    padding: 30px;
-    background-color: #f8f9fa;
+  flex: 1;
+  padding: 40px;
+  background-color: #f9fafc;
 }
 
 .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .top-bar h1 {
-    font-size: 28px;
-    font-weight: 600;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
 }
 
 .logout-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logout-btn:hover {
-    background-color: #eee;
+  background-color: #e0e0e0;
 }
 
 /* Payroll boxes */
-
-.boxes{
-    display: flex;
-    flex-direction: column;
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.left-box{
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.left-box,
+.right-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 300px;
 }
 
-.right-box{
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.left-box h2,
+.right-box h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
+.left-box-form {
+  margin-bottom: 16px;
+}
 
+.left-box-form h4 {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+}
 
-/* Responsive Design Pages */
+.left-box-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.left-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.left-box button:hover {
+  background-color: #000000;
+}
+
+.right-box-top {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.total-basic,
+.net {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f3f5;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.total-basic-title,
+.total-net-title {
+  font-weight: 600;
+}
+
+.total-basic-sum,
+.total-net-sum {
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background-color: #f0f2f5;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        padding: 15px;
-    }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+  }
 
-    .logo {
-        margin-bottom: 20px;
-        font-size: 20px;
-    }
+  .nav-menu {
+    flex-direction: row;
+    justify-content: space-around;
+    overflow-x: auto;
+  }
 
-    .nav-menu {
-        flex-direction: row;
-        justify-content: space-between;
-        overflow-x: auto;
-        padding-bottom: 5px;
-    }
+  .main-content {
+    padding: 20px;
+  }
 
-    .nav-item {
-        padding: 8px;
-    }
+  .top-bar h1 {
+    font-size: 24px;
+  }
 
-    .nav-item span {
-        font-size: 14px;
-    }
-
-    .main-content {
-        padding: 15px;
-    }
-
-    .top-bar h1 {
-        font-size: 24px;
-    }
+  .boxes {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
-    .nav-menu {
-        gap: 5px;
-    }
+  .top-bar h1 {
+    font-size: 20px;
+  }
 
-    .nav-item {
-        padding: 6px;
-        gap: 8px;
-    }
+  .left-box,
+  .right-box {
+    padding: 16px;
+  }
 
-    .top-bar {
-        margin-bottom: 20px;
-    }
-
-    .top-bar h1 {
-        font-size: 20px;
-    }
-} 
+  th,
+  td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
