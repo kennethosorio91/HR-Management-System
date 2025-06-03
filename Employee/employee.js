@@ -7,7 +7,7 @@ const saveEmployeeData = data => sessionStorage.setItem('employeeData', JSON.str
 // Event handlers
 const handleLogout = () => {
     sessionStorage.clear();
-    window.location.href = 'login.html';
+    window.location.href = '../Login/login.html';
 };
 
 const handleAddEmployee = event => {
